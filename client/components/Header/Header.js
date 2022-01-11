@@ -3,7 +3,7 @@ import './styles.css';
 
 const Header = () => {
     return (
-        <div className="container">
+        <div className="header-container">
             <div id="logo">Logo Icon</div>
             <div id="optionsContainer">
                 <div>Notifications Icon</div>
