@@ -6,6 +6,7 @@ import VerifyIQ from '@informed-iq/verify-iq-sdk';
 // COMPONENTS //
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
+import MainContainer from './components/MainContainer/MainContainer';
 
 class App extends React.Component {
     constructor(props) {
@@ -18,8 +19,8 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <h2>Hello from Frontend</h2>
                 <Header />
+                <MainContainer />
             </div>
         )
     }
