@@ -4,9 +4,7 @@ import './App.css';
 import VerifyIQ from '@informed-iq/verify-iq-sdk';
 
 // COMPONENTS //
-import Form from './components/Form/Form';
-import Header from './components/Header/Header';
-import MainContainer from './components/MainContainer/MainContainer';
+import Dashboard from './dashboard/Dashboard'
 
 class App extends React.Component {
     constructor(props) {
@@ -19,8 +17,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Header />
-                <MainContainer />
+                <Dashboard />
             </div>
         )
     }

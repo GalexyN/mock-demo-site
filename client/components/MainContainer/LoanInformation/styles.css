@@ -1,7 +1,0 @@
-.loan-information-container {
-    width: 100%;
-}
-.loan-information-header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
