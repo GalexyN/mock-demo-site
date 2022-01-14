@@ -7,21 +7,15 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function TotalLoans() {
+export default function Deposits() {
   return (
     <React.Fragment>
-      <Title>Total Loan Amounts</Title>
+      <Title>Total Loans</Title>
       <Typography component="p" variant="h4">
         $45,247,982,024.98
       </Typography>
       <Typography color="text.secondary" sx={{ flex: 1 }}>
-        YTD
-      </Typography>
-      <Typography component="p" variant="h4">
-        $4,452,560,348.12
-      </Typography>
-      <Typography color="text.secondary" sx={{ flex: 1 }}>
-        MTD
+        on 12 January, 2022
       </Typography>
       <div>
         <Link color="primary" href="#" onClick={preventDefault}>
