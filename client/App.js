@@ -4,7 +4,7 @@ import './App.css';
 import VerifyIQ from '@informed-iq/verify-iq-sdk';
 
 // COMPONENTS //
-import Dashboard from './dashboard/Dashboard'
+import Dashboard from './components/Dashboard'
 
 class App extends React.Component {
     constructor(props) {

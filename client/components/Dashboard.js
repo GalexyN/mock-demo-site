@@ -19,8 +19,10 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
-import Deposits from './Deposits';
+import TotalLoans from './TotalLoans';
 import Orders from './Orders';
+import ViewApplications from './ViewApplications';
+import NewUsers from './NewUsers';
 
 function Copyright(props) {
   return (
@@ -160,7 +162,7 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={12} md={6} lg={8}>
+              <Grid item xs={12} md={12} lg={12}>
                 <Paper
                   sx={{
                     p: 2,
@@ -172,7 +174,7 @@ function DashboardContent() {
                   <Chart />
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
+              {/* Total Loans */}
               <Grid item xs={12} md={6} lg={4}>
                 <Paper
                   sx={{
@@ -182,7 +184,33 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  <Deposits />
+                  <TotalLoans />
+                </Paper>
+              </Grid>
+              {/* View Applications */}
+              <Grid item xs={12} md={6} lg={4}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 240,
+                  }}
+                >
+                  <ViewApplications />
+                </Paper>
+              </Grid>
+              {/* New Users */}
+              <Grid item xs={12} md={6} lg={4}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 240,
+                  }}
+                >
+                  <NewUsers />
                 </Paper>
               </Grid>
               {/* Recent Orders */}
