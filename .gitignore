@@ -37,3 +37,4 @@ sampleFiles/
 sampleImageFiles/
 imageToBase64Converter.js
 localPostman.js
+scanForBlurry.js
