@@ -17,12 +17,15 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LogoutIcon from '@mui/icons-material/Logout';
+import BorderStyleSharpIcon from '@mui/icons-material/BorderStyleSharp';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import TotalLoans from './TotalLoans';
 import Orders from './Orders';
 import ViewApplications from './ViewApplications';
-import NewUsers from './NewUsers';
+import UserActivities from './UserActivities';
 
 function Copyright(props) {
   return (
@@ -115,6 +118,7 @@ function DashboardContent() {
             >
               <MenuIcon />
             </IconButton>
+            <BorderStyleSharpIcon fontSize="large" />
             <Typography
               component="h1"
               variant="h6"
@@ -122,11 +126,17 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Loan Origination Dashboard
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="primary">
+            <IconButton color="inherit" >
+              <Badge badgeContent={4} color="primary" >
                 <NotificationsIcon />
+              </Badge>
+              <Badge badgeContent={2} color="primary" sx={{ marginLeft: '15px', marginRight: '15px' }}>
+                <CalendarTodayIcon />
+              </Badge>
+              <Badge color="primary">
+                <LogoutIcon />
               </Badge>
             </IconButton>
           </Toolbar>
@@ -200,7 +210,7 @@ function DashboardContent() {
                   <ViewApplications />
                 </Paper>
               </Grid>
-              {/* New Users */}
+              {/* User Activities */}
               <Grid item xs={12} md={6} lg={4}>
                 <Paper
                   sx={{
@@ -210,7 +220,7 @@ function DashboardContent() {
                     height: 240,
                   }}
                 >
-                  <NewUsers />
+                  <UserActivities />
                 </Paper>
               </Grid>
               {/* Recent Orders */}

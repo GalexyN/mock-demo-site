@@ -49,16 +49,6 @@ export default function ViewApplicationModal() {
                         <Grid item xs={12}>
                             <Button variant="contained">Find App</Button>
                         </Grid>
-
-                        {/* <Grid item xs={12}>
-                            <TextField id="standard-basic" label="Standard" variant="standard" />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField id="standard-basic" label="Standard" variant="standard" />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField id="standard-basic" label="Standard" variant="standard" />
-                        </Grid> */}
                     </Grid>
                 </Box>
 
