@@ -13,32 +13,17 @@ import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import LogoutIcon from '@mui/icons-material/Logout';
-import BorderStyleSharpIcon from '@mui/icons-material/BorderStyleSharp';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import TotalLoans from './TotalLoans';
 import Orders from './Orders';
 import ViewApplications from './ViewApplications';
 import UserActivities from './UserActivities';
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -89,7 +74,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 function DashboardContent() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -118,7 +104,6 @@ function DashboardContent() {
             >
               <MenuIcon />
             </IconButton>
-            <BorderStyleSharpIcon fontSize="large" />
             <Typography
               component="h1"
               variant="h6"
@@ -169,10 +154,10 @@ function DashboardContent() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={12} md={12} lg={12}>
+              {/* <Grid item xs={12} md={8} lg={12}>
                 <Paper
                   sx={{
                     p: 2,
@@ -183,7 +168,7 @@ function DashboardContent() {
                 >
                   <Chart />
                 </Paper>
-              </Grid>
+              </Grid> */}
               {/* Total Loans */}
               <Grid item xs={12} md={6} lg={4}>
                 <Paper
@@ -230,7 +215,6 @@ function DashboardContent() {
                 </Paper>
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>

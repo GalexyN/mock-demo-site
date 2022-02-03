@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
+import Button from '@mui/material/Button';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -21,13 +21,13 @@ export default function Orders() {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell align="center" sx={{fontWeight: 'bold'}}>Application ID</TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold'}}>Original Loan Date</TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold'}}>Name</TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold'}}>Email</TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold'}}>Outstanding Loan Amount</TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold'}}>Total Loan Amount</TableCell>
-            <TableCell align="center" sx={{fontWeight: 'bold'}}>Next Loan Payment Date</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Application ID</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Original Loan Date</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Name</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Email</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Outstanding Loan Amount</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Total Loan Amount</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Next Loan Payment Date</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -44,9 +44,11 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
-      </Link>
+      <div style={{'paddingTop': '10px'}}>
+        <Button sx={{ backgroundColor: "#2b6777", width: '20%'}} variant="contained">
+          View All Recent Loans
+        </Button>
+      </div>
     </React.Fragment>
   );
 }

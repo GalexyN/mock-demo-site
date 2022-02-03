@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Title from './Title';
+import Button from '@mui/material/Button';
 
 function preventDefault(event) {
   event.preventDefault();
@@ -24,9 +24,9 @@ export default function TotalLoans() {
         MTD
       </Typography>
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View loans
-        </Link>
+        <Button sx={{ backgroundColor: "#2b6777" }} variant="contained">
+          View Loans
+        </Button>
       </div>
     </React.Fragment>
   );

@@ -1,79 +1,139 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import Title from './Title';
-import ViewApplicationModal from './ViewApplicationModal';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Modal from '@mui/material/Modal';
+import Title from './Title';
+import VerifyIQOpen from './VerifyIQOpen';
+import VerifyIQSettings from './VerifyIQSettings';
+import VerifyIQ from '@informed-iq/verify-iq-sdk';
 
 function preventDefault(event) {
     event.preventDefault();
 }
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '25%',
-    height: '70%',
-    bgcolor: '#fff',
-    border: '2px solid #2b6777',
-    boxShadow: 24,
-    p: 4,
-};
-
 export default function ViewApplications() {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const [applicationId, setApplicationId] = React.useState('');
+    const [verifyIQAuthToken, setVerifyIQAuthToken] = React.useState('');
+    const [verifyIQEnvironment, setVerifyIQEnvironment] = React.useState('');
+    const [verifyIQIIQURL, setVerifyIQIIQURL] = React.useState('');
+    const [verifyIQACURL, setVerifyIQACURL] = React.useState('');
+    const [verifyIQApplicant, setVerifyIQApplicant] = React.useState('');
+    const [verifyIQDocumentModalOption, setVerifyIQDocumentModalOption] = React.useState('');
+    const [verifyIQStipulation, setVerifyIQStipulation] = React.useState('');
+    const [verifyIQUploadWebhook, setVerifyIQUploadWebhook] = React.useState('');
+    const [verifyIQCollectWebhook, setVerifyIQCollectWebhook] = React.useState('');
+    const [verifyIQJWT, setVerifyIQJWT] = React.useState('');
+    const [viq, setViq] = React.useState({});
+
+    const handleVerifiyIQAuthTokenChange = (event) => {
+        setVerifyIQAuthToken(event.target.value);
+    }
+
+    const handleVerifyIQEnvironmentChange = (event) => {
+        setVerifyIQEnvironment(event.target.value);
+    }
+
+    const handleApplicationIdChange = (event) => {
+        setApplicationId(event.target.value);
+    }
+
+    const handleVerifyIQACURLChange = (event) => {
+        setVerifyIQACURL(event.target.value);
+    }
+
+    const handleVerifyIQIIQURLChange = (event) => {
+        setVerifyIQIIQURL(event.target.value);
+    }
+
+    const handleVerifyIQApplicantChange = (event) => {
+        setVerifyIQApplicant(event.target.value);
+
+    }
+    const handleVerifyIQDocumentModalOptionChange = (event) => {
+        setVerifyIQDocumentModalOption(event.target.value);
+    }
+
+    const handleVerifyIQStipulationChange = (event) => {
+        setVerifyIQStipulation(event.target.value);
+    }
+    const handleVerifyIQUploadWebhookChange = (event) => {
+        setVerifyIQUploadWebhook(event.target.value);
+    }
+    const handleVerifyIQCollectWebhookChange = (event) => {
+        setVerifyIQCollectWebhook(event.target.value);
+    }
+    const handleVerifyIQJWTChange = (event) => {
+        setVerifyIQJWT(event.target.value);
+    }
+
+    const initVerifyIQ = () => {
+        let tmp = new VerifyIQ({
+            authToken: verifyIQAuthToken,
+            environment: verifyIQEnvironment === 'Production' ? VerifyIQ.Production : VerifyIQ.Staging,
+            actionCallbackWebhookUrl: verifyIQACURL,
+            url: verifyIQIIQURL,
+        });
+        setViq(tmp);
+    }
 
     return (
         <React.Fragment>
-            {/* <Title>View Your Loan Applications</Title> */}
-            <Typography component="p" variant="h4">
-                Application Lookup
-            </Typography>
-            <Typography color="text.secondary" sx={{paddingBottom: '20px'}}>
-                utilizes VerifyIQ
-            </Typography>
-            <div>
-                {/* <ViewApplicationModal /> */}
-                <Grid container align="center" rowSpacing="20px">
-                    <Grid item xs={12}>
-                        <TextField id="standard-basic" label="Application ID" variant="standard" helperText="Please enter application id" sx={{ label: { color: "#2b6777" }}}/>
+            <div style={{
+                position: 'relative',
+            }}>
+                <VerifyIQSettings
+                    initVerifyIQ={initVerifyIQ}
+                    verifyIQACURL={verifyIQACURL}
+                    verifyIQIIQURL={verifyIQIIQURL}
+                    verifyIQApplicant={verifyIQApplicant}
+                    verifyIQEnvironment={verifyIQEnvironment}
+                    verifyIQDocumentModalOption={verifyIQDocumentModalOption}
+                    verifyIQStipulation={verifyIQStipulation}
+                    verifyIQUploadWebhook={verifyIQUploadWebhook}
+                    verifyIQCollectWebhook={verifyIQCollectWebhook}
+                    verifyIQJWT={verifyIQJWT}
+                    handleVerifyIQAuthTokenChange={handleVerifiyIQAuthTokenChange}
+                    handleVerifyIQEnvironmentChange={handleVerifyIQEnvironmentChange}
+                    handleVerifyIQACURLChange={handleVerifyIQACURLChange}
+                    handleVerifyIQIIQURLChange={handleVerifyIQIIQURLChange}
+                    handleVerifyIQApplicantChange={handleVerifyIQApplicantChange}
+                    handleVerifyIQDocumentModalOptionChange={handleVerifyIQDocumentModalOptionChange}
+                    handleVerifyIQStipulationChange={handleVerifyIQStipulationChange}
+                    handleVerifyIQUploadWebhookChange={handleVerifyIQUploadWebhookChange}
+                    handleVerifyIQCollectWebhookChange={handleVerifyIQCollectWebhookChange}
+                    handleVerifyIQJWTChange={handleVerifyIQJWTChange}
+                />
+                <Title>
+                    Application Lookup
+                </Title>
+                <Typography color="text.secondary" sx={{ paddingBottom: '20px' }}>
+                    utilizes VerifyIQ
+                </Typography>
+                <div>
+                    <Grid container align="center" rowSpacing="20px">
+                        <Grid item xs={12}>
+                            <TextField
+                                id="standard-basic"
+                                label="Application ID"
+                                onChange={handleApplicationIdChange}
+                                variant="standard"
+                                helperText="Please enter application id"
+                                sx={{ label: { color: "#2b6777" } }}
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <VerifyIQOpen
+                                applicationId={applicationId}
+                                viq={viq}
+                                verifyIQApplicant={verifyIQApplicant}
+                                verifyIQDocumentModalOption={verifyIQDocumentModalOption}
+                                verifyIQStipulation={verifyIQStipulation}
+                                verifyIQUploadWebhook={verifyIQUploadWebhook}
+                                verifyIQCollectWebhook={verifyIQCollectWebhook}
+                            />
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12}>
-                        <Button onClick={handleOpen} sx={{ backgroundColor: "#2b6777"}} variant="contained">Find App</Button>
-                        <Modal
-                            open={open}
-                            onClose={handleClose}
-                            aria-labelledby="modal-modal-title"
-                            aria-describedby="modal-modal-description"
-                        >
-                            <Box
-                                component="form"
-                                sx={style}
-                                noValidate
-                                autoComplete="off"
-                            >
-                                <Typography id="modal-modal-title" variant="h6" component="h2" >
-                                    Enter your Application Information
-                                </Typography>
-                                <Grid container align="center">
-                                    <Grid item xs={12}>
-                                        <TextField id="standard-basic" label="Application ID" variant="standard" />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <Button variant="contained">Find App</Button>
-                                    </Grid>
-                                </Grid>
-                            </Box>
-                        </Modal>
-                    </Grid>
-                </Grid>
+                </div>
             </div>
         </React.Fragment>
     );

@@ -4,7 +4,7 @@
   "description": "",
   "main": "localPostman.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "webpack --config webpack.config.js && node server/server.js",
     "server-dev": "nodemon server/server.js",
     "react-dev": "webpack --config webpack.config.js --watch --mode=development ",
     "react-prod": "webpack --config webpack.config.js"
@@ -26,6 +26,7 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "express": "^4.17.2",
+    "material-ui-popup-state": "^2.0.0",
     "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
