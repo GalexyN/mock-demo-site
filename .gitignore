@@ -32,7 +32,7 @@ dist/
 .env
 
 #bundle
-public/
+public/bundle.js
 sampleFiles/
 sampleImageFiles/
 imageToBase64Converter.js
