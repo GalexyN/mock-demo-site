@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
 
 // COMPONENTS //
 import Dashboard from './components/Dashboard'

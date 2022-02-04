@@ -109,6 +109,7 @@ function DashboardContent() {
               variant="h6"
               color="inherit"
               noWrap
+              align="center"
               sx={{ flexGrow: 1 }}
             >
               Loan Origination Dashboard
