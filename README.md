@@ -129,4 +129,5 @@ Accessible as **`VerifyIQ.DocumentModalOptions`**;
 
 ## VerifyIQ Documentation
 [VerifyIQ SDK Repo](https://github.com/Informed/verifyiq-sdk)
+
 [VerifyIQ SDK Documentation](https://www.npmjs.com/package/@informed-iq/verify-iq-sdk/v/1.11.1)
