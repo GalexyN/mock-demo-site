@@ -72,6 +72,29 @@ export default function ViewApplications() {
             environment: verifyIQEnvironment === 'Production' ? VerifyIQ.Production : VerifyIQ.Staging,
             actionCallbackWebhookUrl: verifyIQACURL,
             url: verifyIQIIQURL,
+            onPass: function (actionObject, reason) {
+                /* Stipulation action handler */
+                console.log('Pass', actionObject, reason);
+            },
+
+            onDocumentRequestedViaSms: function (stipObjects) {
+                console.log('onRequestDocumentsViaSms', stipObjects);
+            },
+
+            onIncomplete: function (actionObject, reason) {
+                /* Stipulation action handler */
+                console.log('Incomplete', actionObject, reason);
+            },
+
+            onWaive: function (actionObject, reason) {
+                /* Stipulation action handler */
+                console.log('Waive', actionObject, reason);
+            },
+
+            onLoad: function (payload) {
+                /* Iframe onLoad event handler */
+                console.log('Frame is loaded', payload);
+            }
         });
         setViq(tmp);
     }
