@@ -90,11 +90,6 @@ export default function ViewApplications() {
                 /* Stipulation action handler */
                 console.log('Waive', actionObject, reason);
             },
-
-            onLoad: function (payload) {
-                /* Iframe onLoad event handler */
-                console.log('Frame is loaded', payload);
-            }
         });
         setViq(tmp);
     }
@@ -153,6 +148,7 @@ export default function ViewApplications() {
                                 verifyIQStipulation={verifyIQStipulation}
                                 verifyIQUploadWebhook={verifyIQUploadWebhook}
                                 verifyIQCollectWebhook={verifyIQCollectWebhook}
+                                verifyIQJWT={verifyIQJWT}
                             />
                         </Grid>
                     </Grid>

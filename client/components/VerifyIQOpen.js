@@ -10,8 +10,8 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '75%',
-    height: '75%',
+    width: '95%',
+    height: '95%',
 };
 
 const VerifyIQOpen = ({ 
@@ -21,7 +21,8 @@ const VerifyIQOpen = ({
     verifyIQDocumentModalOption, 
     verifyIQStipulation, 
     verifyIQUploadWebhook, 
-    verifyIQCollectWebhook 
+    verifyIQCollectWebhook,
+    verifyIQJWT,
 }) => {
 
     const createRenderOptions = (desiredVerifyIQApplicant, desiredVerifyIQDocumentModalOption, desiredVerifyIQStipulation) => {
@@ -33,7 +34,9 @@ const VerifyIQOpen = ({
             stipulation: VerifyIQ.StipulationTypes.Income,
             uploadedDocumentWebhookUrl: verifyIQUploadWebhook,
             collectedDocumentWebhookUrl: verifyIQCollectWebhook,
+            verifyIQJWT: verifyIQJWT
         };
+        console.log(options)
 
         switch (desiredVerifyIQApplicant) {
             case 'CoApplicant':

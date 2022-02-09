@@ -41,6 +41,8 @@ export default function VerifyIQSettings({
     handleVerifyIQApplicantChange,
     handleVerifyIQDocumentModalOptionChange,
     handleVerifyIQStipulationChange,
+    handleVerifyIQCollectWebhookChange,
+    handleVerifyIQUploadWebhookChange,
     handleVerifyIQJWTChange
 }) {
 
@@ -277,6 +279,7 @@ export default function VerifyIQSettings({
                                                             variant="standard"
                                                             helperText="Please enter collectDocs Webhook URL"
                                                             value={verifyIQCollectWebhook}
+                                                            onChange={handleVerifyIQCollectWebhookChange}
                                                             sx={{ label: { color: "#2b6777" } }}
                                                         />
                                                     </Grid>
@@ -287,6 +290,7 @@ export default function VerifyIQSettings({
                                                             variant="standard"
                                                             helperText="Please enter uploadDocs Webhook URL"
                                                             value={verifyIQUploadWebhook}
+                                                            onChange={handleVerifyIQUploadWebhookChange}
                                                             sx={{ label: { color: "#2b6777" } }}
                                                         />
                                                     </Grid>
