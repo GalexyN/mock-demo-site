@@ -1,18 +1,11 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from './Title';
+import { Button, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import { loanInformationItems } from './loanInformationItems';
 
-const rows = loanInformationItems
+/* COMPONENTS */
+import Title from './Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+const rows = loanInformationItems
 
 export default function Orders() {
   return (
@@ -44,8 +37,8 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-      <div style={{'paddingTop': '10px'}}>
-        <Button sx={{ backgroundColor: "#2b6777", width: '20%'}} variant="contained">
+      <div style={{ 'paddingTop': '10px' }}>
+        <Button sx={{ backgroundColor: "#2b6777", width: '20%' }} variant="contained">
           View All Recent Loans
         </Button>
       </div>

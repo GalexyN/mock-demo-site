@@ -1,8 +1,6 @@
 import React from 'react';
 import VerifyIQ from '@informed-iq/verify-iq-sdk';
-import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
+import { Button, Modal, Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 const style = {

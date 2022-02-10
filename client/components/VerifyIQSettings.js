@@ -5,7 +5,8 @@ import {
     InputLabel, MenuItem, FormControl, FormHelperText, Select
 } from '@mui/material';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
-import { ExpandMoreIcon, SettingsIcon} from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 
 const style = {

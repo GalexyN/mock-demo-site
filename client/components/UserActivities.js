@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Title from './Title';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
+import {Grid, Button } from '@mui/material';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import EditIcon from '@mui/icons-material/Edit';

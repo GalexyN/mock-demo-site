@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
+import VerifyIQ from '@informed-iq/verify-iq-sdk';
+import { Typography, Grid, TextField } from '@mui/material';
+
+/* COMPONENTS */
 import Title from './Title';
 import VerifyIQOpen from './VerifyIQOpen';
 import VerifyIQSettings from './VerifyIQSettings';
-import VerifyIQ from '@informed-iq/verify-iq-sdk';
 
 export default function ViewApplications() {
     const [applicationId, setApplicationId] = React.useState('');

@@ -1,11 +1,8 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Title from './Title';
-import Button from '@mui/material/Button';
+import { Typography, Button} from '@mui/material';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+/* COMPONENTS */
+import Title from './Title';
 
 export default function TotalLoans() {
   return (
