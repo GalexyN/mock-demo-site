@@ -1,20 +1,26 @@
 
-import faker from 'faker';
+import faker from '@faker-js/faker';
 export const loanInformationItems = [];
 const statuses = ['Payment Pending', 'Delinquent', 'Paid'];
 
-for (let i = 0; i < 15; i++) {
-    loanInformationItems.push({
-        id: i,
-        application_id: faker.random.number(),
-        original_loan_date: faker.date.past().toLocaleDateString(),
-        full_name: faker.name.findName(),
-        email: faker.internet.email(),
-        outstanding_loan_amount: faker.finance.amount(),
-        total_loan_amount: faker.finance.amount(),
-        next_loan_payment_date: faker.date.future().toLocaleDateString(),
-        status: statuses[Math.floor(Math.random() * statuses.length)],
-    });
+const generateFakeData = () => {
+    for (let i = 0; i < 15; i++) {
+        loanInformationItems.push({
+            id: i,
+            application_id: faker.datatype.uuid(),
+            original_loan_date: faker.date.past().toLocaleDateString(),
+            full_name: faker.name.findName(),
+            email: faker.internet.email(),
+            outstanding_loan_amount: faker.finance.amount(250000, 750000, 2 ,"$", true),
+            total_loan_amount: faker.finance.amount(250000, 750000, 2, "$", true),
+            next_loan_payment_date: faker.date.future().toLocaleDateString(),
+            status: statuses[Math.floor(Math.random() * statuses.length)],
+        });
+    }
+}
+
+if (!loanInformationItems.length) {
+    generateFakeData();
 }
 
 // export const loanInformationItems = [{

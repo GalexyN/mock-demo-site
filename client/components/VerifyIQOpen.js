@@ -155,8 +155,8 @@ const VerifyIQOpen = ({
                     <CloseIcon onClick={handleClose} sx={
                         {
                             position: "absolute",
-                            top: "-21px",
                             left: "-21px",
+                            top: "-21px",
                             border: "2px solid #fff",
                             borderRadius: "50%",
                             color: "#fff"

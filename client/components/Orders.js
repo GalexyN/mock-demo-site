@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
+import { Button, Table, TableBody, TableCell, TableHead, TableRow, Avatar, Grid } from '@mui/material';
 import { loanInformationItems } from './loanInformationItems';
 
 /* COMPONENTS */
@@ -21,6 +21,7 @@ export default function Orders() {
             <TableCell align="center" sx={{ fontWeight: 'bold' }}>Outstanding Loan Amount</TableCell>
             <TableCell align="center" sx={{ fontWeight: 'bold' }}>Total Loan Amount</TableCell>
             <TableCell align="center" sx={{ fontWeight: 'bold' }}>Next Loan Payment Date</TableCell>
+            <TableCell align="center" sx={{ fontWeight: 'bold' }}>Loan Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -28,11 +29,21 @@ export default function Orders() {
             <TableRow key={row.id}>
               <TableCell align="center">{row.application_id}</TableCell>
               <TableCell align="center">{row.original_loan_date}</TableCell>
-              <TableCell align="center">{row.full_name}</TableCell>
+              <TableCell align="center">
+                <Grid container spacing={1} alignItems="center" justifyContent="center">
+                  <Grid item xs={3}>
+                    <Avatar sm alt={row.full_name} src="." sx={{ width: "25px", height: "25px" }} />
+                  </Grid>
+                  <Grid item xs={9}>
+                    {row.full_name}
+                  </Grid>
+                </Grid>
+              </TableCell>
               <TableCell align="center">{row.email}</TableCell>
               <TableCell align="center">{row.outstanding_loan_amount}</TableCell>
               <TableCell align="center">{row.total_loan_amount}</TableCell>
               <TableCell align="center">{row.next_loan_payment_date}</TableCell>
+              <TableCell align="center">{row.status}</TableCell>
             </TableRow>
           ))}
         </TableBody>
