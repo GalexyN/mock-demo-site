@@ -116,7 +116,7 @@ export default function VerifyIQSettings({
                                                             sx={{ label: { color: "#2b6777" } }}
                                                         />
                                                     </Grid>
-                                                    <Grid item xs={8} spacing={2}>
+                                                    <Grid item xs={8}>
                                                         <Grid container>
                                                             <Grid item xs={10}>
                                                                 <TextField
