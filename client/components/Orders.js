@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Table, TableBody, TableCell, TableHead, TableRow, Avatar, Grid } from '@mui/material';
+import { Button, Table, TableBody, TableCell, TableHead, TableRow, Avatar, Grid, Typography } from '@mui/material';
 import { loanInformationItems } from './loanInformationItems';
 
 /* COMPONENTS */
@@ -43,7 +43,22 @@ export default function Orders() {
               <TableCell align="center">{row.outstanding_loan_amount}</TableCell>
               <TableCell align="center">{row.total_loan_amount}</TableCell>
               <TableCell align="center">{row.next_loan_payment_date}</TableCell>
-              <TableCell align="center">{row.status}</TableCell>
+              <TableCell align="center">
+                <Typography variant="body2" style={{
+                  borderRadius: "10px",
+                  padding: "3px 10px",
+                  fontSize: "0.75em",
+                  color: "#fff",
+                  fontWeight: "bold",
+                  backgroundColor:
+                    ((row.status === 'Processing' && 'orange' ||
+                      row.status === 'Paid' && 'green' ||
+                      row.status === 'Delinquent' && 'red'
+                    ))
+                }}>
+                  {row.status}
+                </Typography>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
