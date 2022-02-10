@@ -81,7 +81,7 @@ export default function VerifyIQSettings({
                                             </AccordionSummary>
                                             <AccordionDetails>
                                                 <Grid container spacing={2}>
-                                                    <Grid item xs={4}>
+                                                    <Grid item xs={6}>
                                                         <TextField
                                                             id="standard-basic"
                                                             label="Auth Token"
@@ -91,8 +91,8 @@ export default function VerifyIQSettings({
                                                             sx={{ label: { color: "#2b6777" } }}
                                                         />
                                                     </Grid>
-                                                    <Grid item xs={4}>
-                                                        <FormControl fullWidth variant="standard">
+                                                    <Grid item xs={6}>
+                                                        <FormControl variant="standard">
                                                             <InputLabel sx={{ color: '#2b6777' }}>Environment</InputLabel>
                                                             <Select
                                                                 label="Environment"
@@ -105,7 +105,7 @@ export default function VerifyIQSettings({
                                                             <FormHelperText>Please select your desired environment</FormHelperText>
                                                         </FormControl>
                                                     </Grid>
-                                                    <Grid item xs={4}>
+                                                    <Grid item xs={6}>
                                                         <TextField
                                                             id="standard-basic"
                                                             label="ActionCallback URL"
@@ -116,36 +116,30 @@ export default function VerifyIQSettings({
                                                             sx={{ label: { color: "#2b6777" } }}
                                                         />
                                                     </Grid>
-                                                    <Grid item xs={8}>
-                                                        <Grid container>
-                                                            <Grid item xs={10}>
-                                                                <TextField
-                                                                    id="standard-basic"
-                                                                    label="InformedIQ URL"
-                                                                    onChange={handleVerifyIQIIQURLChange}
-                                                                    variant="standard"
-                                                                    helperText="Please enter InformedIQ URL"
-                                                                    value={verifyIQIIQURL}
-                                                                    sx={{ label: { color: "#2b6777" } }}
-                                                                />
-                                                            </Grid>
-                                                            <Grid item xs={2}>
-                                                                <Button
-                                                                    variant="contained"
-                                                                    color="primary"
-                                                                    onClick={initVerifyIQ}
-                                                                    sx={
-                                                                        {
-                                                                            left: "40px",
-                                                                            top: "10px",
-                                                                            backgroundColor: "#2b6777"
-                                                                        }
-                                                                    }
-                                                                >
-                                                                    Initiate
-                                                                </Button>
-                                                            </Grid>
-                                                        </Grid>
+                                                    <Grid item xs={6}>
+                                                        <TextField
+                                                            id="standard-basic"
+                                                            label="InformedIQ URL"
+                                                            onChange={handleVerifyIQIIQURLChange}
+                                                            variant="standard"
+                                                            helperText="Please enter InformedIQ URL"
+                                                            value={verifyIQIIQURL}
+                                                            sx={{ label: { color: "#2b6777" } }}
+                                                        />
+                                                    </Grid>
+                                                    <Grid item xs={12}>
+                                                        <Button
+                                                            variant="contained"
+                                                            color="primary"
+                                                            onClick={initVerifyIQ}
+                                                            sx={
+                                                                {
+                                                                    backgroundColor: "#2b6777"
+                                                                }
+                                                            }
+                                                        >
+                                                            Initiate
+                                                        </Button>
                                                     </Grid>
                                                 </Grid>
                                             </AccordionDetails>
