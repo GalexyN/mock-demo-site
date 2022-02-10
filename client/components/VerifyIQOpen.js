@@ -14,13 +14,13 @@ const style = {
     height: '95%',
 };
 
-const VerifyIQOpen = ({ 
+const VerifyIQOpen = ({
     viq,
-    applicationId, 
-    verifyIQApplicant, 
-    verifyIQDocumentModalOption, 
-    verifyIQStipulation, 
-    verifyIQUploadWebhook, 
+    applicationId,
+    verifyIQApplicant,
+    verifyIQDocumentModalOption,
+    verifyIQStipulation,
+    verifyIQUploadWebhook,
     verifyIQCollectWebhook,
     verifyIQJWT,
 }) => {
@@ -154,7 +154,17 @@ const VerifyIQOpen = ({
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} id="verify-iq-modal">
-                    <CloseIcon onClick={handleClose} sx={{ position: "absolute", top: "-30px", left: "-30px", border: "2px solid #fff", borderRadius: "50%", color: "#fff" }} />
+                    <CloseIcon onClick={handleClose} sx={
+                        {
+                            position: "absolute",
+                            top: "-21px",
+                            left: "-21px",
+                            border: "2px solid #fff",
+                            borderRadius: "50%",
+                            color: "#fff"
+                        }
+                    }
+                    />
                 </Box>
             </Modal>
         </div>
