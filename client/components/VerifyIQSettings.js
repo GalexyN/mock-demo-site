@@ -1,22 +1,12 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-import SettingsIcon from '@mui/icons-material/Settings';
-import Popover from '@mui/material/Popover';
+import {
+    Button, Typography, TextField, TextareaAutosize, Popover,
+    Box, Grid, Accordion, AccordionSummary, AccordionDetails,
+    InputLabel, MenuItem, FormControl, FormHelperText, Select
+} from '@mui/material';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
-import Select from '@mui/material/Select';
+import { ExpandMoreIcon, SettingsIcon} from '@mui/icons-material/ExpandMore';
+
 
 const style = {
     width: '600px',

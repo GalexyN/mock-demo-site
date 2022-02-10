@@ -7,10 +7,6 @@ import VerifyIQOpen from './VerifyIQOpen';
 import VerifyIQSettings from './VerifyIQSettings';
 import VerifyIQ from '@informed-iq/verify-iq-sdk';
 
-function preventDefault(event) {
-    event.preventDefault();
-}
-
 export default function ViewApplications() {
     const [applicationId, setApplicationId] = React.useState('');
     const [verifyIQAuthToken, setVerifyIQAuthToken] = React.useState('');
@@ -25,7 +21,7 @@ export default function ViewApplications() {
     const [verifyIQJWT, setVerifyIQJWT] = React.useState('');
     const [viq, setViq] = React.useState({});
 
-    const handleVerifiyIQAuthTokenChange = (event) => {
+    const handleVerifyIQAuthTokenChange = (event) => {
         setVerifyIQAuthToken(event.target.value);
     }
 
@@ -94,39 +90,46 @@ export default function ViewApplications() {
         setViq(tmp);
     }
 
+    const verifyIQSettingsProps = {
+        initVerifyIQ,
+        verifyIQACURL,
+        verifyIQIIQURL,
+        verifyIQApplicant,
+        verifyIQEnvironment,
+        verifyIQDocumentModalOption,
+        verifyIQStipulation,
+        verifyIQUploadWebhook,
+        verifyIQCollectWebhook,
+        verifyIQJWT,
+        handleVerifyIQAuthTokenChange,
+        handleVerifyIQEnvironmentChange,
+        handleVerifyIQACURLChange,
+        handleVerifyIQIIQURLChange,
+        handleVerifyIQApplicantChange,
+        handleVerifyIQDocumentModalOptionChange,
+        handleVerifyIQStipulationChange,
+        handleVerifyIQUploadWebhookChange,
+        handleVerifyIQCollectWebhookChange,
+        handleVerifyIQJWTChange
+    }
+
+    const verifyIQOpenProps = {
+        applicationId,
+        viq,
+        verifyIQApplicant,
+        verifyIQDocumentModalOption,
+        verifyIQStipulation,
+        verifyIQUploadWebhook,
+        verifyIQCollectWebhook,
+        verifyIQJWT,
+    }
+
     return (
         <React.Fragment>
-            <div style={{
-                position: 'relative',
-            }}>
-                <VerifyIQSettings
-                    initVerifyIQ={initVerifyIQ}
-                    verifyIQACURL={verifyIQACURL}
-                    verifyIQIIQURL={verifyIQIIQURL}
-                    verifyIQApplicant={verifyIQApplicant}
-                    verifyIQEnvironment={verifyIQEnvironment}
-                    verifyIQDocumentModalOption={verifyIQDocumentModalOption}
-                    verifyIQStipulation={verifyIQStipulation}
-                    verifyIQUploadWebhook={verifyIQUploadWebhook}
-                    verifyIQCollectWebhook={verifyIQCollectWebhook}
-                    verifyIQJWT={verifyIQJWT}
-                    handleVerifyIQAuthTokenChange={handleVerifiyIQAuthTokenChange}
-                    handleVerifyIQEnvironmentChange={handleVerifyIQEnvironmentChange}
-                    handleVerifyIQACURLChange={handleVerifyIQACURLChange}
-                    handleVerifyIQIIQURLChange={handleVerifyIQIIQURLChange}
-                    handleVerifyIQApplicantChange={handleVerifyIQApplicantChange}
-                    handleVerifyIQDocumentModalOptionChange={handleVerifyIQDocumentModalOptionChange}
-                    handleVerifyIQStipulationChange={handleVerifyIQStipulationChange}
-                    handleVerifyIQUploadWebhookChange={handleVerifyIQUploadWebhookChange}
-                    handleVerifyIQCollectWebhookChange={handleVerifyIQCollectWebhookChange}
-                    handleVerifyIQJWTChange={handleVerifyIQJWTChange}
-                />
-                <Title>
-                    Application Lookup
-                </Title>
-                <Typography color="text.secondary" sx={{ paddingBottom: '20px' }}>
-                    utilizes VerifyIQ
-                </Typography>
+            <div style={{ position: 'relative' }}>
+                <VerifyIQSettings {...verifyIQSettingsProps} />
+                <Title>Application Lookup</Title>
+                <Typography color="text.secondary" sx={{ paddingBottom: '20px' }}>utilizes VerifyIQ</Typography>
                 <div>
                     <Grid container align="center" rowSpacing="20px">
                         <Grid item xs={12}>
@@ -140,16 +143,7 @@ export default function ViewApplications() {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <VerifyIQOpen
-                                applicationId={applicationId}
-                                viq={viq}
-                                verifyIQApplicant={verifyIQApplicant}
-                                verifyIQDocumentModalOption={verifyIQDocumentModalOption}
-                                verifyIQStipulation={verifyIQStipulation}
-                                verifyIQUploadWebhook={verifyIQUploadWebhook}
-                                verifyIQCollectWebhook={verifyIQCollectWebhook}
-                                verifyIQJWT={verifyIQJWT}
-                            />
+                            <VerifyIQOpen {...verifyIQOpenProps} />
                         </Grid>
                     </Grid>
                 </div>
