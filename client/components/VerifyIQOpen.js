@@ -34,7 +34,7 @@ const VerifyIQOpen = ({
             stipulation: VerifyIQ.StipulationTypes.Income,
             uploadedDocumentWebhookUrl: verifyIQUploadWebhook,
             collectedDocumentWebhookUrl: verifyIQCollectWebhook,
-            verifyIQJWT: verifyIQJWT
+            jwtToken: verifyIQJWT
         };
         console.log(options)
 
