@@ -1,14 +1,12 @@
 import * as React from 'react';
-import Title from './Title';
-import {Grid, Button } from '@mui/material';
+import { Grid, Button } from '@mui/material';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import EditIcon from '@mui/icons-material/Edit';
 import InfoIcon from '@mui/icons-material/Info';
 
-function preventDefault(event) {
-    event.preventDefault();
-}
+/* COMPONENTS */
+import Title from './Title';
 
 export default function UserActivities() {
     return (

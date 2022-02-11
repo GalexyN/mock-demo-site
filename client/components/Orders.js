@@ -27,12 +27,18 @@ export default function Orders() {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell align="center">{row.application_id}</TableCell>
+              <TableCell align="center" onClick={() => document.getElementById("verify-iq-find-app-button").click()} sx={{
+                "&:hover": { cursor: "pointer" }
+              }}>
+                <Typography variant="body2" sx={{ "&:hover": { backgroundColor: "#c8d8e4", borderRadius: "20px", borderColor: "#fff", borderWidth: "2px" } }}>
+                  {row.application_id}
+                </Typography>
+              </TableCell>
               <TableCell align="center">{row.original_loan_date}</TableCell>
               <TableCell align="center">
                 <Grid container spacing={1} alignItems="center" justifyContent="center">
                   <Grid item xs={3}>
-                    <Avatar sm alt={row.full_name} src="." sx={{ width: "25px", height: "25px" }} />
+                    <Avatar alt={row.full_name} src="." sx={{ width: "25px", height: "25px" }} />
                   </Grid>
                   <Grid item xs={9}>
                     {row.full_name}
@@ -48,14 +54,21 @@ export default function Orders() {
                   borderRadius: "10px",
                   padding: "3px 10px",
                   fontSize: "0.75em",
-                  color: "#fff",
+                  color:
+                    ((
+                      row.status === 'Paid' && "#3bb077" ||
+                      row.status === 'Processing' && "#2a7ade" ||
+                      row.status === 'Delinquent' && "#d95087"
+                    )),
                   fontWeight: "bold",
                   backgroundColor:
-                    ((row.status === 'Processing' && 'orange' ||
-                      row.status === 'Paid' && 'green' ||
-                      row.status === 'Delinquent' && 'red'
+                    ((
+                      row.status === 'Paid' && "#e5faf2" ||
+                      row.status === 'Processing' && "#ebf1fe" ||
+                      row.status === 'Delinquent' && "#fff0f1"
                     ))
                 }}>
+
                   {row.status}
                 </Typography>
               </TableCell>

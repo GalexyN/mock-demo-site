@@ -142,7 +142,7 @@ const VerifyIQOpen = ({
 
     return (
         <div>
-            <Button onClick={handleVerifyIQOnClick} sx={{ backgroundColor: "#2b6777" }} variant="contained">
+            <Button id="verify-iq-find-app-button" onClick={handleVerifyIQOnClick} sx={{ backgroundColor: "#2b6777", "&hover": { cursor: "pointer" } }} variant="contained">
                 Find App
             </Button>
             <Modal
@@ -165,7 +165,7 @@ const VerifyIQOpen = ({
                     />
                 </Box>
             </Modal>
-        </div>
+        </div >
     );
 }
 
