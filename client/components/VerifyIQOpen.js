@@ -142,7 +142,16 @@ const VerifyIQOpen = ({
 
     return (
         <div>
-            <Button id="verify-iq-find-app-button" onClick={handleVerifyIQOnClick} sx={{ backgroundColor: "#2b6777", "&hover": { cursor: "pointer" } }} variant="contained">
+            <Button
+                id="verify-iq-find-app-button"
+                onClick={handleVerifyIQOnClick}
+                sx={
+                    {
+                        backgroundColor: "#2b6777",
+                        "&hover": { cursor: "pointer" }
+                    }
+                }
+                variant="contained">
                 Find App
             </Button>
             <Modal
@@ -159,7 +168,10 @@ const VerifyIQOpen = ({
                             top: "-21px",
                             border: "2px solid #fff",
                             borderRadius: "50%",
-                            color: "#fff"
+                            color: "#fff",
+                            "&:hover": {
+                                cursor: "pointer"
+                            }
                         }
                     }
                     />
