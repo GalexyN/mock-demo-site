@@ -134,7 +134,8 @@ export default function VerifyIQSettings({
                                                             onClick={initVerifyIQ}
                                                             sx={
                                                                 {
-                                                                    backgroundColor: "#2b6777"
+                                                                    backgroundColor: "#2b6777",
+                                                                    width: "100%",
                                                                 }
                                                             }
                                                         >
