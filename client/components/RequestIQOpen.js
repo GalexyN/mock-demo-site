@@ -1,5 +1,4 @@
 import React from 'react';
-// import VerifyIQ from '@informed-iq/verify-iq-sdk';
 import { Button, Modal, Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -81,7 +80,3 @@ const RequestIQOpen = ({
 }
 
 export default RequestIQOpen;
-
-
-
-"https://acmefinancial.informed.iq/request-docs/AN_SHOWNTELL_001?sdk=true&applicant=undefined&stipulation=undefined&sdkConfig=%7B%22collectedDocumentWebhookUrl%22%3A%22https%3A%2F%2Fdemo.informed.iq%2F10imasv1%22%2C%22precheckedDocuments%22%3A%7B%22income%22%3A%5B%7B%22paystub%22%3A3%7D%2C%7B%22bankStatement%22%3A2%7D%2C%22w2%22%5D%2C%22insurance%22%3A%5B%22insuranceIDCard%22%2C%22declarationsPage%22%5D%7D%7D"
