@@ -34,7 +34,6 @@ const VerifyIQOpen = ({
             collectedDocumentWebhookUrl: verifyIQCollectWebhook,
             jwtToken: verifyIQJWT
         };
-        console.log(options)
 
         switch (desiredVerifyIQApplicant) {
             case 'CoApplicant':
