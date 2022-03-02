@@ -131,10 +131,10 @@ const VerifyIQOpen = ({
         return options;
     }
 
+    
     const handleVerifyIQOnClick = async () => {
         await setOpen(true);
         let renderOptions = await createRenderOptions(verifyIQApplicant, verifyIQDocumentModalOption, verifyIQStipulation);
-
         await viq.renderApplicationId(renderOptions);
     }
     const [open, setOpen] = React.useState(false);

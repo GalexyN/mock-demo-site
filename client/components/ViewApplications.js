@@ -6,6 +6,7 @@ import { Typography, Grid, TextField } from '@mui/material';
 import Title from './Title';
 import VerifyIQOpen from './VerifyIQOpen';
 import VerifyIQSettings from './VerifyIQSettings';
+import RequestIQOpen from './RequestIQOpen';
 
 export default function ViewApplications() {
     const [applicationId, setApplicationId] = React.useState('');
@@ -64,10 +65,14 @@ export default function ViewApplications() {
 
     const initVerifyIQ = () => {
         let tmp = new VerifyIQ({
-            authToken: verifyIQAuthToken,
-            environment: verifyIQEnvironment === 'Production' ? VerifyIQ.Production : VerifyIQ.Staging,
-            actionCallbackWebhookUrl: verifyIQACURL,
-            url: verifyIQIIQURL,
+            // authToken: verifyIQAuthToken,
+            authToken: "x",
+            // environment: verifyIQEnvironment === 'Production' ? VerifyIQ.Production : VerifyIQ.Staging,
+            environment: VerifyIQ.Production,
+            // actionCallbackWebhookUrl: verifyIQACURL,
+            actionCallbackWebhookUrl: "https://demo.informed.iq/suhdn1su",
+            // url: verifyIQIIQURL,
+            url: "https://infrmd-portal-acceptance.herokuapp.com",
             onPass: function (actionObject, reason) {
                 /* Stipulation action handler */
                 console.log('Pass', actionObject, reason);
@@ -124,6 +129,11 @@ export default function ViewApplications() {
         verifyIQJWT,
     }
 
+    const requestIQOpenProps = {
+        applicationId,
+        viq
+    }
+
     return (
         <React.Fragment>
             <div style={{ position: 'relative' }}>
@@ -142,8 +152,11 @@ export default function ViewApplications() {
                                 sx={{ label: { color: "#2b6777" } }}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={6}>
                             <VerifyIQOpen {...verifyIQOpenProps} />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <RequestIQOpen {...requestIQOpenProps} />
                         </Grid>
                     </Grid>
                 </div>

@@ -7,10 +7,11 @@
     "start": "webpack --config webpack.config.js && node server/server.js",
     "server-dev": "nodemon server/server.js",
     "react-dev": "webpack --config webpack.config.js --watch --mode=development ",
-    "react-prod": "webpack --config webpack.config.js"
+    "react-prod": "webpack --config webpack.config.js",
+    "uld": "npm i && yarn install"
   },
   "keywords": [],
-  "author": "",
+  "author": "GalexyN <alexander.nguyen@informed.iq>",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.16.7",
@@ -19,7 +20,7 @@
     "@babel/preset-react": "^7.16.7",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@informed-iq/verify-iq-sdk": "^1.11.1",
+    "@informed-iq/verify-iq-sdk": "^1.11.2",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.8",
     "axios": "^0.24.0",
@@ -37,5 +38,6 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^6.0.0-alpha.6"
-  }
+  },
+  "repository": "https://github.com/GalexyN/mock-demo-site.git"
 }
