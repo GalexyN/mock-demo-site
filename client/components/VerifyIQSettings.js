@@ -25,6 +25,7 @@ export default function VerifyIQSettings({
     verifyIQUploadWebhook,
     verifyIQCollectWebhook,
     verifyIQJWT,
+    verifyIQPrecheckedDocuments,
     handleVerifyIQAuthTokenChange,
     handleVerifyIQEnvironmentChange,
     handleVerifyIQACURLChange,
@@ -34,7 +35,8 @@ export default function VerifyIQSettings({
     handleVerifyIQStipulationChange,
     handleVerifyIQCollectWebhookChange,
     handleVerifyIQUploadWebhookChange,
-    handleVerifyIQJWTChange
+    handleVerifyIQJWTChange,
+    handleVerifyIQPrecheckedDocumentsChange,
 }) {
 
     return (
@@ -295,8 +297,10 @@ export default function VerifyIQSettings({
                                                         <TextareaAutosize
                                                             label="Prechecked Documents"
                                                             placeholder="Please enter prechecked documents"
+                                                            value={verifyIQPrecheckedDocuments}
                                                             maxRows={100}
                                                             minRows={10}
+                                                            onChange={handleVerifyIQPrecheckedDocumentsChange}
                                                             style={{ width: '100%' }}
                                                         />
                                                     </Grid>

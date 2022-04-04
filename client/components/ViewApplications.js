@@ -20,6 +20,7 @@ export default function ViewApplications() {
     const [verifyIQUploadWebhook, setVerifyIQUploadWebhook] = React.useState('');
     const [verifyIQCollectWebhook, setVerifyIQCollectWebhook] = React.useState('');
     const [verifyIQJWT, setVerifyIQJWT] = React.useState('');
+    const [verifyIQPrecheckedDocuments, setVerifyIQPrecheckedDocuments] = React.useState('');
     const [viq, setViq] = React.useState({});
 
     const handleVerifyIQAuthTokenChange = (event) => {
@@ -62,17 +63,16 @@ export default function ViewApplications() {
     const handleVerifyIQJWTChange = (event) => {
         setVerifyIQJWT(event.target.value);
     }
+    const handleVerifyIQPrecheckedDocumentsChange = (event) => {
+        setVerifyIQPrecheckedDocuments(event.target.value);
+    }
 
     const initVerifyIQ = () => {
         let tmp = new VerifyIQ({
-            // authToken: verifyIQAuthToken,
-            authToken: "x",
-            // environment: verifyIQEnvironment === 'Production' ? VerifyIQ.Production : VerifyIQ.Staging,
-            environment: VerifyIQ.Production,
-            // actionCallbackWebhookUrl: verifyIQACURL,
-            actionCallbackWebhookUrl: "https://demo.informed.iq/suhdn1su",
-            // url: verifyIQIIQURL,
-            url: "https://infrmd-portal-acceptance.herokuapp.com",
+            authToken: verifyIQAuthToken,
+            environment: verifyIQEnvironment === 'Production' ? VerifyIQ.Production : VerifyIQ.Staging,
+            actionCallbackWebhookUrl: verifyIQACURL,
+            url: verifyIQIIQURL,
             onPass: function (actionObject, reason) {
                 /* Stipulation action handler */
                 console.log('Pass', actionObject, reason);
@@ -106,6 +106,7 @@ export default function ViewApplications() {
         verifyIQUploadWebhook,
         verifyIQCollectWebhook,
         verifyIQJWT,
+        verifyIQPrecheckedDocuments,
         handleVerifyIQAuthTokenChange,
         handleVerifyIQEnvironmentChange,
         handleVerifyIQACURLChange,
@@ -115,7 +116,8 @@ export default function ViewApplications() {
         handleVerifyIQStipulationChange,
         handleVerifyIQUploadWebhookChange,
         handleVerifyIQCollectWebhookChange,
-        handleVerifyIQJWTChange
+        handleVerifyIQJWTChange,
+        handleVerifyIQPrecheckedDocumentsChange,
     }
 
     const verifyIQOpenProps = {
@@ -127,11 +129,15 @@ export default function ViewApplications() {
         verifyIQUploadWebhook,
         verifyIQCollectWebhook,
         verifyIQJWT,
+        verifyIQPrecheckedDocuments,
     }
 
     const requestIQOpenProps = {
         applicationId,
-        viq
+        viq,
+        verifyIQJWT,
+        verifyIQCollectWebhook,
+        verifyIQPrecheckedDocuments,
     }
 
     return (

@@ -21,6 +21,7 @@ const VerifyIQOpen = ({
     verifyIQUploadWebhook,
     verifyIQCollectWebhook,
     verifyIQJWT,
+    verifyIQPrecheckedDocuments,
 }) => {
 
     const createRenderOptions = (desiredVerifyIQApplicant, desiredVerifyIQDocumentModalOption, desiredVerifyIQStipulation) => {
@@ -32,7 +33,9 @@ const VerifyIQOpen = ({
             stipulation: VerifyIQ.StipulationTypes.Income,
             uploadedDocumentWebhookUrl: verifyIQUploadWebhook,
             collectedDocumentWebhookUrl: verifyIQCollectWebhook,
-            jwtToken: verifyIQJWT
+            jwtToken: verifyIQJWT,
+            precheckedDocuments: JSON.parse(JSON.stringify(verifyIQPrecheckedDocuments)
+            ),
         };
 
         switch (desiredVerifyIQApplicant) {
@@ -130,7 +133,7 @@ const VerifyIQOpen = ({
         return options;
     }
 
-    
+
     const handleVerifyIQOnClick = async () => {
         await setOpen(true);
         let renderOptions = await createRenderOptions(verifyIQApplicant, verifyIQDocumentModalOption, verifyIQStipulation);

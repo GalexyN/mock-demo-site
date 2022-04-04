@@ -14,24 +14,16 @@ const style = {
 const RequestIQOpen = ({
     viq,
     applicationId,
+    verifyIQCollectWebhook,
+    verifyIQPrecheckedDocuments
 }) => {
-
-    const precheckedDocumentsDefault = {
-        // the following is an example only
-        income: [
-            { paystub: 3 },
-            { bankStatement: 2 },
-            'w2', // this would default to qty of 1
-        ],
-        insurance: ['insuranceIDCard', 'declarationsPage'],
-    };
     const handleRequestIQOnClick = async () => {
         await setOpen(true);
         let options = {
             htmlElement: document.getElementById("request-iq-modal"),
             applicationId: applicationId,
-            collectedDocumentWebhookUrl: "https://acceptance.driveinformed.com",
-            precheckedDocuments: precheckedDocumentsDefault
+            collectedDocumentWebhookUrl: verifyIQCollectWebhook,
+            precheckedDocuments: JSON.parse(verifyIQPrecheckedDocuments),
         }
         await viq.renderRequestIq(options);
     }
