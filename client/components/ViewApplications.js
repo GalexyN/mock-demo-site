@@ -20,7 +20,7 @@ export default function ViewApplications() {
     const [verifyIQUploadWebhook, setVerifyIQUploadWebhook] = React.useState('');
     const [verifyIQCollectWebhook, setVerifyIQCollectWebhook] = React.useState('');
     const [verifyIQJWT, setVerifyIQJWT] = React.useState('');
-    const [verifyIQPrecheckedDocuments, setVerifyIQPrecheckedDocuments] = React.useState('');
+    const [verifyIQPrecheckedDocuments, setVerifyIQPrecheckedDocuments] = React.useState({});
     const [viq, setViq] = React.useState({});
 
     const handleVerifyIQAuthTokenChange = (event) => {
@@ -69,8 +69,9 @@ export default function ViewApplications() {
 
     const initVerifyIQ = () => {
         let tmp = new VerifyIQ({
+            authType: VerifyIQ.auth.Tab,
             authToken: verifyIQAuthToken,
-            environment: verifyIQEnvironment === 'Production' ? VerifyIQ.Production : VerifyIQ.Staging,
+            environment: verifyIQEnvironment,
             actionCallbackWebhookUrl: verifyIQACURL,
             url: verifyIQIIQURL,
             onPass: function (actionObject, reason) {

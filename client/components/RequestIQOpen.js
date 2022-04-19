@@ -23,7 +23,7 @@ const RequestIQOpen = ({
             htmlElement: document.getElementById("request-iq-modal"),
             applicationId: applicationId,
             collectedDocumentWebhookUrl: verifyIQCollectWebhook,
-            precheckedDocuments: JSON.parse(verifyIQPrecheckedDocuments),
+            precheckedDocuments: Object.keys(verifyIQPrecheckedDocuments).length ? JSON.parse(verifyIQPrecheckedDocuments) : {},
         }
         await viq.renderRequestIq(options);
     }
