@@ -297,7 +297,7 @@ export default function VerifyIQSettings({
                                                         <TextareaAutosize
                                                             label="Prechecked Documents"
                                                             placeholder="Please enter prechecked documents"
-                                                            value={verifyIQPrecheckedDocuments}
+                                                            value={Object.keys(verifyIQPrecheckedDocuments).length ? verifyIQPrecheckedDocuments : ""}
                                                             maxRows={100}
                                                             minRows={10}
                                                             onChange={handleVerifyIQPrecheckedDocumentsChange}
