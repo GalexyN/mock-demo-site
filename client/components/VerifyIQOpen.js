@@ -69,6 +69,10 @@ const VerifyIQOpen = ({
         }
 
         switch (desiredVerifyIQStipulation) {
+            case "Income":
+                options.stipulation = VerifyIQ.StipulationTypes.Income;
+                break;
+
             case "Residence":
                 options.stipulation = VerifyIQ.StipulationTypes.Residence;
                 break;
@@ -126,7 +130,7 @@ const VerifyIQOpen = ({
                 break;
 
             default:
-                options.stipulation = VerifyIQ.StipulationTypes.Income;
+                options.stipulation = "";
                 break;
         }
 

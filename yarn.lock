@@ -1067,8 +1067,10 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.0.0-alpha.7.tgz#d4383b10c5cd35ec02fafd1bc472b2f85c306cf5"
   integrity sha512-T2nYE8+EfzfkRMLMSm7UvgC7fZ2KkKEyCMeyPVS0q2cuvENbt1SjWyu0bOJ0JqBbTs1g+gYMWMFMXspWlzNVmQ==
 
-"@informed-iq/verify-iq-sdk@../verifyiq-sdk":
-  version "1.10.7"
+"@informed-iq/verify-iq-sdk@^1.11.2":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@informed-iq/verify-iq-sdk/-/verify-iq-sdk-1.12.0.tgz#f985a3be13e3b3bbdcabc6e8a09f464f08b6fe67"
+  integrity sha512-baQulFPVx782s8h69AJlYOwF6YcE7yagqiDEYWaKG/2dpegKcCTZ1BM2RXDED6GHftTh0T4hEfC0N52Fn7TC5A==
   dependencies:
     "@babel/polyfill" "7.10.4"
     types "^0.1.1"
